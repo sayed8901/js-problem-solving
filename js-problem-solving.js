@@ -39,8 +39,8 @@ function sumOfPositiveNumbers(numbers) {
 
 let randomNumbers = [2, -5, 10, -3, 7];
 
-let result = sumOfPositiveNumbers(randomNumbers);
-console.log("Sum of positive numbers:", result);
+let sumResult = sumOfPositiveNumbers(randomNumbers);
+console.log("Sum of positive numbers:", sumResult);
 
 
 
@@ -129,7 +129,7 @@ function calculator(num1, num2, operator) {
     }
 }
 
-let calculatedResult = calculator(6,2,'/')
+let calculatedResult = calculator(6,2,'*')
 console.log("Calculated result is:", calculatedResult);
 
 
@@ -222,7 +222,7 @@ Implement a JavaScript function to find the second smallest element in an array 
 
 function findSecondSmallestNumber(numbers) {
     if (!Array.isArray(numbers) || numbers.length === 0) {
-        return undefined; // Handle empty or non-array input
+        return undefined; // to handle empty or non-array input
     }
 
     let smallestNum = numbers[0];
