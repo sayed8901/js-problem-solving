@@ -89,22 +89,7 @@ console.log("Most frequent element is:", frequentElement);
 
 
 
-/* Task 4: 
-Create a function that takes a sorted array of numbers and a target value as input. The function should find two numbers in the array that add up to the target value. Return an array containing the indices of the two numbers.
-
- Example Input: ([1, 3, 6, 8, 11, 15], 9) 
- Example Output: [1, 2] (numbers at indices 1 and 2: 3 + 6 = 9) */
-
-
-
-
-
-
-
-
-
-
-/*  Task 5: 
+/*  Task 4: 
 Implement a simple JavaScript calculator. The calculator should take two numbers and an operator (+, -, *, /) as input and return the result of the operation. */
 
 
@@ -136,7 +121,7 @@ console.log("Calculated result is:", calculatedResult);
 
 
 
-/* Task 6: 
+/* Task 5: 
 Create a program that generates a random password of a specified length. The password should include a mix of uppercase letters, lowercase letters, numbers, and special characters. */
 
 
@@ -169,7 +154,7 @@ console.log(`Random Generated ${passwordLength} Digit Password is: ${randomPassw
 
 
 
-/* Task 7: 
+/* Task 6: 
 Implement a function that converts a Roman numeral to an integer. The function should take a Roman numeral string (e.g., "IX" or "XXI") as input and return the corresponding integer value. */
 
 
@@ -216,7 +201,7 @@ console.log(romanToInteger("XXVII"));
 
 
 
-/* Task 8: 
+/* Task 7: 
 Implement a JavaScript function to find the second smallest element in an array of numbers. The function should return the second smallest number. */
 
 
