@@ -14,7 +14,8 @@ function reversedFunction(str) {
 
 let inputStr = "hello world";
 
-console.log(reversedFunction(inputStr));
+let reversedString = reversedFunction(inputStr);
+console.log("Reversed string is:", reversedString);
 
 
 
@@ -26,7 +27,7 @@ Create a function that takes an array of numbers as input and returns the sum of
 Example Input: [2, -5, 10, -3, 7] Example Output: 19 */
 
 
-function sumOffPositiveNumbers(numbers) {
+function sumOfPositiveNumbers(numbers) {
     let sum = 0;
     for (let i = 0; i < numbers.length; i++) {
         if (numbers[i] >= 0) {
@@ -38,7 +39,8 @@ function sumOffPositiveNumbers(numbers) {
 
 let randomNumbers = [2, -5, 10, -3, 7];
 
-console.log(sumOffPositiveNumbers(randomNumbers));
+let result = sumOfPositiveNumbers(randomNumbers);
+console.log("Sum of positive numbers:", result);
 
 
 
@@ -80,7 +82,8 @@ function findMostFrequentElement(arr) {
 
 const sampleArray = [3, 5, 2, 5, 3, 3, 1, 4, 5];
 
-console.log(findMostFrequentElement(sampleArray));
+let frequentElement = findMostFrequentElement(sampleArray);
+console.log("Most frequent element is:", frequentElement);
 
 
 
@@ -126,7 +129,8 @@ function calculator(num1, num2, operator) {
     }
 }
 
-console.log(calculator(6,2,'/'));
+let calculatedResult = calculator(6,2,'/')
+console.log("Calculated result is:", calculatedResult);
 
 
 
@@ -159,7 +163,7 @@ function generateRandomPassword(length) {
 const passwordLength = 12;
 const randomPassword = generateRandomPassword(passwordLength);
 
-console.log(`Generated ${passwordLength} Digit Random Password: ${randomPassword}`);
+console.log(`Random Generated ${passwordLength} Digit Password is: ${randomPassword}`);
 
 
 
@@ -200,11 +204,47 @@ function romanToInteger(romanNumeral) {
     prevValue = currentValue;
   }
 
-  return result;
+  return `Value of roman ${romanNumeral} is: ${result}`;
 }
 
-// Test the function
-console.log(romanToInteger("IX")); // Output: 9
-console.log(romanToInteger("XXI")); // Output: 21
-console.log(romanToInteger("IV")); // Output: 4
-console.log(romanToInteger("XXVI")); // Output: 2021
+console.log(romanToInteger("IX"));
+console.log(romanToInteger("XXI"));
+console.log(romanToInteger("IV"));
+console.log(romanToInteger("XXVII"));
+
+
+
+
+
+/* Task 8: 
+Implement a JavaScript function to find the second smallest element in an array of numbers. The function should return the second smallest number. */
+
+
+function findSecondSmallestNumber(numbers) {
+    if (!Array.isArray(numbers) || numbers.length === 0) {
+        return undefined; // Handle empty or non-array input
+    }
+
+    let smallestNum = numbers[0];
+    let secondSmallestNum = numbers[1];
+
+    if (secondSmallestNum < smallestNum) {
+        // Swap or toggle values to ensure smallest and secondSmallest are correct
+        [smallestNum, secondSmallestNum] = [secondSmallestNum, smallestNum];
+      }
+
+    for (let i = 0; i < numbers.length; i++) {
+        let currentNumber = numbers[i];
+        if(currentNumber < smallestNum) {
+            smallestNum = currentNumber;
+        } else if (currentNumber < secondSmallestNum) {
+            secondSmallestNum = currentNumber;
+        }
+    }
+    return secondSmallestNum;
+}
+
+let sampleNumbers = [12, 20, 60, 51, 8, 32]
+
+let secondSmallestNumber = findSecondSmallestNumber(sampleNumbers);
+console.log("Second smallest number is:", secondSmallestNumber);
