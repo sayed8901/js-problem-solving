@@ -50,3 +50,39 @@ Write a JavaScript program to find the most frequent element in an array and ret
 Example Input: [3, 5, 2, 5, 3, 3, 1, 4, 5] Example Output: 3 */
 
 
+function findMostFrequentElement(arr) {
+    if (!Array.isArray(arr) || arr.length === 0) {
+      return null; // to handle empty or non-array input
+    }
+  
+    const frequency = {};
+    let maxFrequency = 0;
+    let mostFrequentElement = arr[0];
+  
+    // Count the frequency of each element in the array
+    for (let i = 0; i < arr.length; i++) {
+        const element = arr[i];
+
+        // Access the current frequency of the 'element' from the 'frequency' object
+        let currentFrequency = frequency[element];
+
+        // checking the current elements frequency. By default is t is set as 0. if any element is found again from the loop, it will increase the frequency number with 1 each time.
+        currentFrequency = (frequency[element] || 0) + 1;
+  
+      if (currentFrequency > maxFrequency) {
+        maxFrequency = currentFrequency;
+        mostFrequentElement = element;
+      }
+    }
+  
+    return mostFrequentElement;
+}
+
+const sampleArray = [3, 5, 2, 5, 3, 3, 1, 4, 5];
+
+console.log(findMostFrequentElement(sampleArray));
+
+
+
+
+
