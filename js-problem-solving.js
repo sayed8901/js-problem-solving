@@ -86,3 +86,44 @@ console.log(findMostFrequentElement(sampleArray));
 
 
 
+/* Task 4: 
+Create a function that takes a sorted array of numbers and a target value as input. The function should find two numbers in the array that add up to the target value. Return an array containing the indices of the two numbers.
+
+ Example Input: ([1, 3, 6, 8, 11, 15], 9) 
+ Example Output: [1, 2] (numbers at indices 1 and 2: 3 + 6 = 9) */
+
+
+
+
+
+
+
+
+
+
+/*  Task 5: 
+Implement a simple JavaScript calculator. The calculator should take two numbers and an operator (+, -, *, /) as input and return the result of the operation. */
+
+
+function calculator(num1, num2, operator) {
+    // console.log(operator);
+    if(operator == "+") {
+        return result = num1 + num2;
+    }
+    else if (operator == "-") {
+        return result = num1 - num2;
+    }
+    else if
+    (operator == "*") {
+        return result = num1 * num2;
+    }
+    else if
+    (operator == "/") {
+        return result = num1 / num2;
+    }
+    else{
+        return "Please provide a valid operator!!"
+    }
+}
+
+console.log(calculator(6,2,'/'));
