@@ -152,11 +152,59 @@ function generateRandomPassword(length) {
     //   console.log(allChars.charAt(randomIndex));
       password += allChars.charAt(randomIndex);
     }
-  
+
     return password;
+}
+
+const passwordLength = 12;
+const randomPassword = generateRandomPassword(passwordLength);
+
+console.log(`Generated ${passwordLength} Digit Random Password: ${randomPassword}`);
+
+
+
+
+
+/* Task 7: 
+Implement a function that converts a Roman numeral to an integer. The function should take a Roman numeral string (e.g., "IX" or "XXI") as input and return the corresponding integer value. */
+
+
+function romanToInteger(romanNumeral) {
+  const romanValues = {
+    'I': 1,
+    'V': 5,
+    'X': 10,
+    'L': 50,
+    'C': 100,
+    'D': 500,
+    'M': 1000
+  };
+
+  let result = 0;
+  let prevValue = 0;
+
+//   The loop starts from the right side because Roman numerals use subtractive notation, where smaller numerals before larger ones represent subtraction. By iterating from right to left, we can correctly handle cases where a smaller numeral comes before a larger one and ensure the accurate conversion of Roman numerals to integers.
+  for (let i = romanNumeral.length - 1; i >= 0; i--) {
+    const currentRoman = romanNumeral[i];
+    // extracting or getting the value of each roman chars of the input numerals
+    const currentValue = romanValues[currentRoman];
+
+    // If the current numeral's value is greater than or equal to the previous numeral's value, we add it to the result; otherwise, we subtract it.
+    if (currentValue >= prevValue) {
+      result += currentValue;
+    } else {
+      result -= currentValue;
+    }
+
+    // during each loop, replacing the "prevValue" by "currentValue"
+    prevValue = currentValue;
   }
-  
-  // Test the function with a password length of 12 characters
-  const passwordLength = 12;
-  const randomPassword = generateRandomPassword(passwordLength);
-  console.log(`Generated ${passwordLength} Digit Random Password: ${randomPassword}`);
+
+  return result;
+}
+
+// Test the function
+console.log(romanToInteger("IX")); // Output: 9
+console.log(romanToInteger("XXI")); // Output: 21
+console.log(romanToInteger("IV")); // Output: 4
+console.log(romanToInteger("XXVI")); // Output: 2021
