@@ -5,11 +5,11 @@ Example Input: "hello world" Example Output: "dlrow olleh" */
 
 
 function reversedFunction(str) {
-    let reversedString = "";
-    for (let i = str.length - 1; i >= 0; i--){
-        reversedString += str[i];
-    }
-    return reversedString;
+  let reversedString = "";
+  for (let i = str.length - 1; i >= 0; i--) {
+    reversedString += str[i];
+  }
+  return reversedString;
 }
 
 let inputStr = "hello world";
@@ -28,13 +28,13 @@ Example Input: [2, -5, 10, -3, 7] Example Output: 19 */
 
 
 function sumOfPositiveNumbers(numbers) {
-    let sum = 0;
-    for (let i = 0; i < numbers.length; i++) {
-        if (numbers[i] >= 0) {
-            sum += numbers[i];
-        }
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] >= 0) {
+      sum += numbers[i];
     }
-    return sum;
+  }
+  return sum;
 }
 
 let randomNumbers = [2, -5, 10, -3, 7];
@@ -53,31 +53,31 @@ Example Input: [3, 5, 2, 5, 3, 3, 1, 4, 5] Example Output: 3 */
 
 
 function findMostFrequentElement(arr) {
-    if (!Array.isArray(arr) || arr.length === 0) {
-      return null; // to handle empty or non-array input
-    }
-  
-    const frequency = {};
-    let maxFrequency = 0;
-    let mostFrequentElement = arr[0];
-  
-    // Count the frequency of each element in the array
-    for (let i = 0; i < arr.length; i++) {
-        const element = arr[i];
+  if (!Array.isArray(arr) || arr.length === 0) {
+    return null; // to handle empty or non-array input
+  }
 
-        // Access the current frequency of the 'element' from the 'frequency' object
-        let currentFrequency = frequency[element];
+  const frequency = {};
+  let maxFrequency = 0;
+  let mostFrequentElement = arr[0];
 
-        // checking the current elements frequency. By default is t is set as 0. if any element is found again from the loop, it will increase the frequency number with 1 each time.
-        currentFrequency = (frequency[element] || 0) + 1;
-  
-      if (currentFrequency > maxFrequency) {
-        maxFrequency = currentFrequency;
-        mostFrequentElement = element;
-      }
+  // Count the frequency of each element in the array
+  for (let i = 0; i < arr.length; i++) {
+    const element = arr[i];
+
+    // Access the current frequency of the 'element' from the 'frequency' object
+    let currentFrequency = frequency[element];
+
+    // checking the current elements frequency. By default is t is set as 0. if any element is found again from the loop, it will increase the frequency number with 1 each time.
+    currentFrequency = (frequency[element] || 0) + 1;
+
+    if (currentFrequency > maxFrequency) {
+      maxFrequency = currentFrequency;
+      mostFrequentElement = element;
     }
-  
-    return mostFrequentElement;
+  }
+
+  return mostFrequentElement;
 }
 
 const sampleArray = [3, 5, 2, 5, 3, 3, 1, 4, 5];
@@ -94,24 +94,26 @@ Implement a simple JavaScript calculator. The calculator should take two numbers
 
 
 function calculator(num1, num2, operator) {
-    // console.log(operator);
-    if(operator == "+") {
-        return result = num1 + num2;
-    }
-    else if (operator == "-") {
-        return result = num1 - num2;
-    }
-    else if
+  // console.log(operator);
+  let result
+
+  if (operator == "+") {
+    return result = num1 + num2;
+  }
+  else if (operator == "-") {
+    return result = num1 - num2;
+  }
+  else if
     (operator == "*") {
-        return result = num1 * num2;
-    }
-    else if
+    return result = num1 * num2;
+  }
+  else if
     (operator == "/") {
-        return result = num1 / num2;
-    }
-    else{
-        return "Please provide a valid operator!!"
-    }
+    return result = num1 / num2;
+  }
+  else {
+    return "Please provide a valid operator!!"
+  }
 }
 
 let calculatedResult = calculator(6,2,'*')
@@ -126,23 +128,23 @@ Create a program that generates a random password of a specified length. The pas
 
 
 function generateRandomPassword(length) {
-    const uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    const lowercaseChars = 'abcdefghijklmnopqrstuvwxyz';
-    const numberChars = '0123456789';
-    const specialChars = '!@#$%&*?';
-  
-    const allChars = uppercaseChars + lowercaseChars + numberChars + specialChars;
-  
-    let password = '';
-    for (let i = 0; i < length; i++) {
-      const randomIndex = Math.floor(Math.random() * allChars.length);
+  const uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  const lowercaseChars = 'abcdefghijklmnopqrstuvwxyz';
+  const numberChars = '0123456789';
+  const specialChars = '!@#$%&*?';
+
+  const allChars = uppercaseChars + lowercaseChars + numberChars + specialChars;
+
+  let password = '';
+  for (let i = 0; i < length; i++) {
+    const randomIndex = Math.floor(Math.random() * allChars.length);
     //   console.log(allChars.length);
     //   console.log(randomIndex);
     //   console.log(allChars.charAt(randomIndex));
-      password += allChars.charAt(randomIndex);
-    }
+    password += allChars.charAt(randomIndex);
+  }
 
-    return password;
+  return password;
 }
 
 const passwordLength = 12;
@@ -172,7 +174,7 @@ function romanToInteger(romanNumeral) {
   let result = 0;
   let prevValue = 0;
 
-//   The loop starts from the right side because Roman numerals use subtractive notation, where smaller numerals before larger ones represent subtraction. By iterating from right to left, we can correctly handle cases where a smaller numeral comes before a larger one and ensure the accurate conversion of Roman numerals to integers.
+  //   The loop starts from the right side because Roman numerals use subtractive notation, where smaller numerals before larger ones represent subtraction. By iterating from right to left, we can correctly handle cases where a smaller numeral comes before a larger one and ensure the accurate conversion of Roman numerals to integers.
   for (let i = romanNumeral.length - 1; i >= 0; i--) {
     const currentRoman = romanNumeral[i];
     // extracting or getting the value of each roman chars of the input numerals
@@ -206,30 +208,131 @@ Implement a JavaScript function to find the second smallest element in an array 
 
 
 function findSecondSmallestNumber(numbers) {
-    if (!Array.isArray(numbers) || numbers.length === 0) {
-        return undefined; // to handle empty or non-array input
+  if (!Array.isArray(numbers) || numbers.length === 0) {
+    return undefined; // to handle empty or non-array input
+  }
+
+  let smallestNum = numbers[0];
+  let secondSmallestNum = numbers[1];
+
+  if (secondSmallestNum < smallestNum) {
+    // Swap or toggle values to ensure smallest and secondSmallest are correct
+    [smallestNum, secondSmallestNum] = [secondSmallestNum, smallestNum];
+  }
+
+  for (let i = 0; i < numbers.length; i++) {
+    let currentNumber = numbers[i];
+    if (currentNumber < smallestNum) {
+      smallestNum = currentNumber;
+    } else if (currentNumber < secondSmallestNum) {
+      secondSmallestNum = currentNumber;
     }
-
-    let smallestNum = numbers[0];
-    let secondSmallestNum = numbers[1];
-
-    if (secondSmallestNum < smallestNum) {
-        // Swap or toggle values to ensure smallest and secondSmallest are correct
-        [smallestNum, secondSmallestNum] = [secondSmallestNum, smallestNum];
-      }
-
-    for (let i = 0; i < numbers.length; i++) {
-        let currentNumber = numbers[i];
-        if(currentNumber < smallestNum) {
-            smallestNum = currentNumber;
-        } else if (currentNumber < secondSmallestNum) {
-            secondSmallestNum = currentNumber;
-        }
-    }
-    return secondSmallestNum;
+  }
+  return secondSmallestNum;
 }
 
 let sampleNumbers = [12, 20, 60, 51, 8, 32]
 
 let secondSmallestNumber = findSecondSmallestNumber(sampleNumbers);
 console.log("Second smallest number is:", secondSmallestNumber);
+
+
+
+
+
+/* Task 8:
+Write a code on how to calculate the number of vowels and consonants in a string? */
+
+function countVowelsAndConsonants(str) {
+  // Convert the string to lowercase to handle both uppercase and lowercase characters.
+  str = str.toLowerCase();
+
+  let vowelsCount = 0;
+  let consonantsCount = 0;
+  const vowels = ['a', 'e', 'i', 'o', 'u'];
+
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i];
+
+    if (char >= 'a' && char <= 'z') {
+      // the above mentioned condition checks if the character char is a lowercase letter from 'a' to 'z'. It ensures that only alphabetic characters are considered for counting
+      if (vowels.includes(char)) {
+        vowelsCount++;
+      } else {
+        consonantsCount++;
+      }
+    }
+  }
+
+  return { vowels: vowelsCount, consonants: consonantsCount };
+}
+
+// Example input string:
+const inputString = "Hello, how are you?";
+const result = countVowelsAndConsonants(inputString);
+console.log("Vowels count:", result.vowels);
+console.log("Consonants count:", result.consonants);
+
+
+
+
+
+/* Task 9:
+Write a code to calculate if the string is palindrome? */
+
+/* A palindrome is a word, phrase, number, or other sequence of characters that reads the same forward and backward. In other words, a palindrome remains unchanged when its characters are reversed.
+
+Examples of palindrome: "level", "radar", "refer", "civic", 121, 454, or 12321  
+
+Examples of palindromic phrases: "Able was I ere I saw Elba", "Madam, in Eden I'm Adam", "A man, a plan, a canal, Panama!". */
+
+
+function isPalindrome(string) {
+  // Remove non-alphanumeric characters and convert to lowercase
+  str = string.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+
+  // Compare the original string with its reverse
+  const palindrome = str.split('').reverse().join('');
+  if (str === palindrome) {
+    return `"${string}" is a palindrome`;
+  }
+  else {
+    return `Oops! "${string}" is not a palindrome!!`;
+  }
+}
+
+// Example string to test:
+const exampleString1 = "Level";
+const exampleString2 = "12321";
+const exampleString3 = "A man, a plan, a canal, Panama!";
+console.log(isPalindrome(exampleString1));
+console.log(isPalindrome(exampleString2));
+console.log(isPalindrome(exampleString3));
+
+
+
+
+
+/* Task 10:
+Explain what a callback function is and provide a simple example? */
+
+/* In JavaScript, a callback function is a function that is passed as an argument to another function and is intended to be executed later, usually after the completion of an asynchronous operation which has been called earlier or at a specific event such as timeout, interval, etc. */
+
+
+// A function that takes two numbers and a callback function as arguments
+function addNumbers(a, b, callback) {
+  const sum = a + b;
+  // Invoke the callback function with the "sum" result as an argument
+  callback(sum);
+}
+
+// Define a callback function to display the result
+function displayResult(result) {
+  console.log("Sum is: " + result);
+}
+
+// Call the 'addNumbers' function and pass the "displayResult" as callback
+addNumbers(5, 2, displayResult);
+
+
+
